@@ -495,5 +495,51 @@ int main(int argc, char** argv)
 
     // Reverse the list using recursion
     reverseListRecursive(list);
+
+    // Print the list
+    printList(list);
+
+    // Get the size of the list
+    printf("Size: %d\n", getSize(list));
+
+    // Get the data at the given index
+    printf("Data at index 2: %d\n", getDataAtIndex(list, 2));
+
+    // Get the index of the given data
+    printf("Index of data 3: %d\n", getIndex(list, 3));
+
+    // Get the first node
+    Node *firstNode = getFirstNode(list);
+
+    // Get the last node
+    Node *lastNode = getLastNode(list);
+
+    // Get the node at the given index
+    Node *nodeAtIndex = getNodeAtIndex(list, 2);
+    printf("Data of node at index 2: %d\n", getData(nodeAtIndex));
+
+    // Get the next node
+    Node *nextNode = getNextNode(firstNode);
+    printf("Data of next node: %d\n", getData(nextNode));
+
+    // Get the previous node
+    Node *prevNode = getPrevNode(lastNode);
+    printf("Data of previous node: %d\n", getData(prevNode));
+
+    // Get the data of the given node
+    printf("Data of first node: %d\n", getData(firstNode));
+
+    // Set the data of the given node
+    setData(firstNode, 5);
+
+    // Print the list
+    printList(list);
+
+    // Delete the list
+    deleteList(list);
+
+    // Print the list
+    printList(list);
+
     return 0;
 }
