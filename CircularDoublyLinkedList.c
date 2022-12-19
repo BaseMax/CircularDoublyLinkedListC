@@ -461,3 +461,39 @@ int getData(Node *node) {
 void setData(Node *node, int data) {
     node->data = data;
 }
+
+/**
+ * @brief Entry point
+ * 
+ * @return int 
+ */
+int main(int argc, char** argv)
+{
+    // Create a new list
+    CircularDoublyLinkedList *list = createList();
+
+    // Add some data
+    addFirst(list, 1);
+    addFirst(list, 2);
+    addFirst(list, 3);
+    addFirst(list, 4);
+
+    // Print the list
+    printList(list);
+
+    // Print the list in reverse order
+    printListReverse(list);
+
+    // Print the list in reverse order using recursion
+    printListReverseRecursive(list);
+
+    // Reverse the list
+    reverseList(list);
+
+    // Print the list
+    printList(list);
+
+    // Reverse the list using recursion
+    reverseListRecursive(list);
+    return 0;
+}
