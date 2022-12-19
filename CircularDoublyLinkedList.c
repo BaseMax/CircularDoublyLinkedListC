@@ -475,9 +475,6 @@ int main(int argc, char** argv)
     // Print the list in reverse order
     printListReverse(list);
 
-    // Print the list in reverse order using recursion
-    // printListReverseRecursive(list);
-
     // Reverse the list
     reverseList(list);
 
