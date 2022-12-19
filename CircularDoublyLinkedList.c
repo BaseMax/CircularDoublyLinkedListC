@@ -308,34 +308,6 @@ void reverseList(CircularDoublyLinkedList *list) {
 }
 
 /**
- * @brief Helper function for reverseListRecursive
- * 
- * @param node 
- */
-void reverseListRecursiveHelper(Node *node) {
-    if(node->next == NULL) {
-        return;
-    }
-    reverseListRecursiveHelper(node->next);
-    int tempData = node->data;
-    node->data = node->next->data;
-    node->next->data = tempData;
-}
-
-/**
- * @brief Reverse the list using recursion
- * 
- * @param list 
- */
-void reverseListRecursive(CircularDoublyLinkedList *list) {
-    if(list->head == NULL) {
-        printf("List is empty!\n");
-        return;
-    }
-    reverseListRecursiveHelper(list->head);
-}
-
-/**
  * @brief Get the size of the list
  * 
  * @param list 
@@ -507,13 +479,10 @@ int main(int argc, char** argv)
     // printListReverseRecursive(list);
 
     // Reverse the list
-    // reverseList(list);
+    reverseList(list);
 
     // Print the list
-    // printList(list);
-
-    // Reverse the list using recursion
-    // reverseListRecursive(list);
+    printList(list);
 
     // Print the list
     printList(list);
