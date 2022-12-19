@@ -259,20 +259,6 @@ void printListReverse(CircularDoublyLinkedList *list) {
 }
 
 /**
- * @brief Print the list in reverse order using recursion
- * 
- * @param list 
- */
-void printListReverseRecursive(CircularDoublyLinkedList *list) {
-    if(list->head == NULL) {
-        printf("List is empty!\n");
-        return;
-    }
-    printListReverseRecursiveHelper(list->head);
-    printf("\n");
-}
-
-/**
  * @brief Helper function for printListReverseRecursive
  * 
  * @param node 
@@ -284,6 +270,20 @@ void printListReverseRecursiveHelper(Node *node) {
     }
     printListReverseRecursiveHelper(node->next);
     printf("%d ", node->data);
+}
+
+/**
+ * @brief Print the list in reverse order using recursion
+ * 
+ * @param list 
+ */
+void printListReverseRecursive(CircularDoublyLinkedList *list) {
+    if(list->head == NULL) {
+        printf("List is empty!\n");
+        return;
+    }
+    printListReverseRecursiveHelper(list->head);
+    printf("\n");
 }
 
 /**
@@ -308,19 +308,6 @@ void reverseList(CircularDoublyLinkedList *list) {
 }
 
 /**
- * @brief Reverse the list using recursion
- * 
- * @param list 
- */
-void reverseListRecursive(CircularDoublyLinkedList *list) {
-    if(list->head == NULL) {
-        printf("List is empty!\n");
-        return;
-    }
-    reverseListRecursiveHelper(list->head);
-}
-
-/**
  * @brief Helper function for reverseListRecursive
  * 
  * @param node 
@@ -333,6 +320,19 @@ void reverseListRecursiveHelper(Node *node) {
     int tempData = node->data;
     node->data = node->next->data;
     node->next->data = tempData;
+}
+
+/**
+ * @brief Reverse the list using recursion
+ * 
+ * @param list 
+ */
+void reverseListRecursive(CircularDoublyLinkedList *list) {
+    if(list->head == NULL) {
+        printf("List is empty!\n");
+        return;
+    }
+    reverseListRecursiveHelper(list->head);
 }
 
 /**
@@ -504,16 +504,16 @@ int main(int argc, char** argv)
     printListReverse(list);
 
     // Print the list in reverse order using recursion
-    printListReverseRecursive(list);
+    // printListReverseRecursive(list);
 
     // Reverse the list
-    reverseList(list);
+    // reverseList(list);
 
     // Print the list
-    printList(list);
+    // printList(list);
 
     // Reverse the list using recursion
-    reverseListRecursive(list);
+    // reverseListRecursive(list);
 
     // Print the list
     printList(list);
@@ -556,9 +556,6 @@ int main(int argc, char** argv)
 
     // Delete the list
     deleteList(list);
-
-    // Print the list
-    printList(list);
 
     return 0;
 }
