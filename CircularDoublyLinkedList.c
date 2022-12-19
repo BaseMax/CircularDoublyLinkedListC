@@ -463,6 +463,25 @@ void setData(Node *node, int data) {
 }
 
 /**
+ * @brief Delete the list
+ * 
+ * @param list 
+ */
+void deleteList(CircularDoublyLinkedList *list) {
+    if(list->head == NULL) {
+        printf("List is empty!\n");
+        return;
+    }
+    Node *temp = list->head;
+    for(int i = 0; i < list->size; i++) {
+        Node *temp2 = temp->next;
+        free(temp);
+        temp = temp2;
+    }
+    free(list);
+}
+
+/**
  * @brief Entry point
  * 
  * @return int 
@@ -470,13 +489,13 @@ void setData(Node *node, int data) {
 int main(int argc, char** argv)
 {
     // Create a new list
-    CircularDoublyLinkedList *list = createList();
+    CircularDoublyLinkedList *list = createNewCircularDoublyLinkedList();
 
     // Add some data
-    addFirst(list, 1);
-    addFirst(list, 2);
-    addFirst(list, 3);
-    addFirst(list, 4);
+    insertAtBeginning(list, 1);
+    insertAtBeginning(list, 2);
+    insertAtBeginning(list, 3);
+    insertAtBeginning(list, 4);
 
     // Print the list
     printList(list);
